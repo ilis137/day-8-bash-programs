@@ -18,8 +18,8 @@ do
     fi
 
 done
-mostFrequentNumber=$(( RANDOM % 6 + 1 ))
-leastFrequentNumber=$(( RANDOM % 6 + 1 ))
+mostFrequentNumber=0
+leastFrequentNumber=9999999999
 
 echo "The numbers of the dice and their corresponding frequencies are:"
 

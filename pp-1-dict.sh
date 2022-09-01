@@ -1,3 +1,12 @@
+#Write a program in the following steps
+#a. Roll a die and find the number between 1 to 6
+#b. Repeat the Die roll and find the result each time
+#c. Store the result in a dictionary
+#d. Repeat till any one of the number has reached 10 times
+#e. Find the number that reached maximum times and the one that was for minimum times
+
+#etc and store them in an array
+
 #!/bin/bash -x
 declare -A dictionary=(
                             [1]=0
@@ -18,20 +27,20 @@ do
     fi
 
 done
-mostFrequentNumber=0
-leastFrequentNumber=9999999999
+mostFrequentNumber=$((RANDOM%6 + 1))
+leastFrequentNumber=$((RANDOM%6 + 1))
 
 echo "The numbers of the dice and their corresponding frequencies are:"
 
 for number in ${!dictionary[@]}
 do
-    if(( dictionary[$number] >= dictionary[$mostFrequentNumber] ))
+    if (( dictionary[$number] >= dictionary[$mostFrequentNumber] ))
     then
-        most_frequent_number=$number
+        mostFrequentNumber=$number
     fi
-    if(( dictionary[$number] <= dictionary[$leastFrequentNumber] ))
+    if (( dictionary[$number] <= dictionary[$leastFrequentNumber] ))
     then
-        least_frequent_number=$number
+        leastFrequentNumber=$number
     fi
 
     echo $number " " ${dictionary[$number]}
